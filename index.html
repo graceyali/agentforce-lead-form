@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with Grace Li | Agentforce Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 16px;
+            padding: 48px 40px;
+            max-width: 460px;
+            width: 100%;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #eef6ff;
+            color: #0176d3;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #0176d3;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #181818;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #5a6872;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #3e4c59;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #e1e5eb;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #181818;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #0176d3;
+            box-shadow: 0 0 0 3px rgba(1, 118, 211, 0.1);
+        }
+
+        input::placeholder {
+            color: #b0b8c1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #0176d3;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background: #014486;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 12px;
+            color: #9aa5b1;
+        }
+
+        .footer a {
+            color: #0176d3;
+            text-decoration: none;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="badge">Agentforce Demo</div>
+            <h1>Let's Connect</h1>
+            <p class="subtitle">Interested in seeing Agentforce in action? Drop your info below and my agent will connect with you shortly.</p>
+        </div>
+
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKh0000035QmdMAE" method="POST">
+            <input type="hidden" name="oid" value="00DKh0000035QmdMAE">
+            <input type="hidden" name="retURL" value="https://www.linkedin.com/in/graceyali/">
+
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input id="first_name" name="first_name" type="text" placeholder="Jane" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input id="last_name" name="last_name" type="text" placeholder="Smith" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="jane@company.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" placeholder="Acme Corp" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Request a Demo</button>
+        </form>
+
+        <div class="footer">
+            Powered by <a href="https://www.salesforce.com/agentforce/" target="_blank">Salesforce Agentforce</a>
+        </div>
+    </div>
+</body>
+</html>
